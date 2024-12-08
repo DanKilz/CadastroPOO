@@ -40,14 +40,14 @@ public class PessoaFisicaRepo {
     public void persistir(String nomeArquivo) throws IOException {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(nomeArquivo))) {
             oos.writeObject(pessoasFisicas);
-            System.out.println("Dados de Pessoa Fisica Armazenados.");
+            System.out.println("Dados de Pessoa Fisica Armazenados!");
         }
     }
     
     public void recuperar(String nomeArquivo) throws IOException, ClassNotFoundException {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(nomeArquivo))) {
             pessoasFisicas = (List<PessoaFisica>) ois.readObject();
-            System.out.println("Dados de Pessoa Fisica Recuperados.");
+            System.out.println("Dados de Pessoa Fisica Recuperados!");
         }
     }
 }
